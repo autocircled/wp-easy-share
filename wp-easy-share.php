@@ -44,11 +44,3 @@ if( is_admin() ) {
     require_once plugin_dir_path( __FILE__ ) . 'admin/settings-callbacks.php';
 
 }
-
-// default plugin options
-function wpess_default_options(){
-    return array(
-        'social_networks' => [ 'facebook', 'linkedin' ],
-        
-    );
-}
