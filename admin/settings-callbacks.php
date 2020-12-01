@@ -62,10 +62,5 @@ function wpess_callback_social_networks_appearance(){
 }
 
 function wpess_callback_field_checkbox( $args ){
-    
-    $options = get_option( 'social_networks', wpess_default_options() );
-    var_dump($options);
-    
-    
-    
+    echo 'This is a checkboxes area for widget locations';
 }
