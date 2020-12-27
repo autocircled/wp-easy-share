@@ -18,6 +18,19 @@ if ( ! defined( 'ABSPATH' ) ) {
     die( 'Do not open this file directly.' );
 }
 
+if( !defined( 'WPESS_SHORTCODE_TEXT' ) ){
+    define( 'WPESS_SHORTCODE_TEXT', apply_filters( 'wpess_shortcode_text', 'WPESS' ) );
+}
+
+if( !defined( 'WPESS_DIR_PATH' ) ){
+    define( 'WPESS_DIR_PATH', plugin_dir_path( __FILE__ ));
+}
+
+if( !defined( 'WPESS_DIR_URL' ) ){
+    define( 'WPESS_DIR_URL', plugins_url('/', __FILE__));
+}
+//var_dump(WPESS_DIR_PATH,WPESS_DIR_URL);
+
 /**
 * Including Plugin file for security
 * Include_once
@@ -44,6 +57,10 @@ if( is_admin() ) {
     require_once plugin_dir_path( __FILE__ ) . 'admin/settings-callbacks.php';
 
 }
+
+require_once plugin_dir_path( __FILE__ ) . 'includes/functions.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/class.inc.load.scripts.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/class.inc.shortcode.php';
 
 // default plugin options
 function wpess_default_options(){
